@@ -1,6 +1,7 @@
 This is an attempt to implement a frequency counter using OpenPLC.
 For this to work the task time cycle interval must be set to 0.5 milliseconds.
-If you change this you may need to calibrate the counter, it won´t be able to read the pulses if the cycle time is increased.
+If you change this you may need to calibrate the counter. The frequency range that can be measured is related to the cycle time, it won´t be able
+to count pulses if they come faster than the cycle time, some will be missed(aliasing).
 The counter calibration can be done altering the constant value that multiplies the measured frequency in the assigned interval (200ms).
 
 In this example, it is measuring pulses in a 200ms interval, which is 1/5 of a second. The measured frequency will be the counted pulses in 200ms
